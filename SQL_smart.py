@@ -8,7 +8,7 @@ def verbinde_zur_datenbank():
         meine_datenbank = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="123",
+            password="3306",
             database="tourplaner"
         )
         return meine_datenbank
