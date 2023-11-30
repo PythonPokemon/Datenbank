@@ -1,28 +1,28 @@
-#step 1 install import
+# 1 import installieren
 import pymongo
 
-#step 2 create a mongo db client
+# 2 mongo db account erstellen + anbinden
 conn_str = "mongodb+srv://PythonPokemon:PythonPokemon2023@cluster0.11e0iuw.mongodb.net/?retryWrites=true&w=majority"
 try:
     client = pymongo.MongoClient(conn_str)
 except Exception:
     print("Error:" + Exception)
 
-#create
-#step 3 create a DB
+
+# 3 DB erstellen
 myDB = client["pymongo_demo"]
 
-# step 4 - create a collection
+# 4 Kollection erstellen
 myCollction = myDB["demo_collection"]
 
-# step 5 Create a document/record
+# 5  document aufzeichnen
 myDoc = {
     "_id": 1,
     "name":"PythonPokemon",
     "message": "das ist eine pymongo demo"
 }
 
-# insert the document
+# dokument inserieren
 res = myCollction.insert_one(myDoc)
 
 print(res.inserted_id)
